@@ -52,7 +52,7 @@ namespace IoTEventSimulator
                 }
                 else
                 {
-                    return new BadRequestObjectResult("invalid workflow. allowed values for identifier supplier, manufacturer");
+                    return new BadRequestObjectResult("invalid workflow value. allowed values for identifier are supplier, manufacturer");
 
                 }
             }
