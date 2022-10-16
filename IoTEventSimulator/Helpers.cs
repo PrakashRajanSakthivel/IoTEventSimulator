@@ -28,7 +28,7 @@ namespace IoTEventSimulator
                     command.CommandText = $"INSERT INTO fleet_simulator_data(fleet_id,batch_id,recorded_location,recorded_date_time) VALUES(@fleetid,@batchid,@datetime,@location)";
                     command.Parameters.Add("@fleetid", MySqlDbType.VarChar).Value = fleetId;
                     command.Parameters.Add("@batchid", MySqlDbType.VarChar).Value = batchId;
-                    command.Parameters.Add("@datetime", MySqlDbType.DateTime).Value = DateTime.Now.AddHours(i / 2 * 0.5);
+                    command.Parameters.Add("@datetime", MySqlDbType.DateTime).Value = DateTime.Now.AddMinutes(45*i);
                     command.Parameters.Add("@location", MySqlDbType.VarChar).Value = locations[i];
                     command.ExecuteNonQuery();
                     Thread.Sleep(2500);

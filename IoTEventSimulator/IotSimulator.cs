@@ -21,8 +21,8 @@ namespace IoTEventSimulator
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            var requestBody = "";
-            var fleet_id = "";
+            var requestBody = string.Empty;
+            var fleet_id = string.Empty;
             using (StreamReader streamReader = new StreamReader(req.Body))
             {
                 requestBody = await streamReader.ReadToEndAsync();
